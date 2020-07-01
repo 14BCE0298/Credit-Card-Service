@@ -2,11 +2,19 @@ package models;
 
 public class CreditCard {
     private Customer cardOwner;
-    private String cardType;
     private int expiryMonth;
     private int expiryYear;
     private int cardMonthlyLimit;
     private int cardOneTimeLimit;
+    private CardType type;
+
+    public CardType getType() {
+        return type;
+    }
+
+    public void setType(CardType type) {
+        this.type = type;
+    }
 
     public Customer getCardOwner() {
         return cardOwner;
