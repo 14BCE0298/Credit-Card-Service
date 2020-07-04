@@ -1,8 +1,12 @@
 package models;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import java.util.Map;
 
+@Component
 public class CardType {
+    @Value("${creditCardType}")
     private Map<CardTypeEnum, CardProperties> typeDetailsMapping;
 
     public Map<CardTypeEnum, CardProperties> getTypeDetailsMapping() {
