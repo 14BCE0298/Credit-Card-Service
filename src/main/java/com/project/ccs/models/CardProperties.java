@@ -1,4 +1,4 @@
-package models;
+package com.project.ccs.models;
 
 public class CardProperties {
     private int interestRate;
