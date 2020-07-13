@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+//TODO: Create 1 API using query param to return details of all or asked credit card type
+//TODO: Adding Swagger
 //TODO : Reading data from yml config file
 //TODO : Add API to list type of credit cards
 //TODO : Add API to apply for credit card
@@ -13,6 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 //TODO : Add API to get total due amount and date
 //TODO : Add API to get all transactions
 //TODO : Send purchase API data to a kafka broker
+//TODO: About API using service details class
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.project.ccs")

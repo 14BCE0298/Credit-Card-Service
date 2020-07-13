@@ -6,13 +6,13 @@ public class CreditCard {
     private int expiryYear;
     private int cardMonthlyLimit;
     private int cardOneTimeLimit;
-    private CardType type;
+    private AllCardTypeDetails type;
 
-    public CardType getType() {
+    public AllCardTypeDetails getType() {
         return type;
     }
 
-    public void setType(CardType type) {
+    public void setType(AllCardTypeDetails type) {
         this.type = type;
     }
 

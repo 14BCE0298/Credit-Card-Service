@@ -1,27 +1,25 @@
 package com.project.ccs.controllers;
 
-import com.project.ccs.models.CardType;
+import com.project.ccs.models.CardProperties;
 import com.project.ccs.models.CardTypeEnum;
+import com.project.ccs.services.CardTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/ccs/v1/")
 public class CardTypeController {
-    public CardType cardType;
+    public CardTypeService cardTypeService;
 
     @Autowired
-    public CardTypeController(CardType cardType) {
-        this.cardType = cardType;
+    public CardTypeController(CardTypeService cardTypeService) {
+        this.cardTypeService = cardTypeService;
     }
 
-    @GetMapping("cardType/{type}")
-    public int getMonthlyLimitForSilverCard(@PathVariable("type") String type) {
-        System.out.println(type);
-        return 202;
-        //return this.cardType.getTypeDetailsMapping().get(CardTypeEnum.GOLD).getMonthlyLimit();
+    @GetMapping("cardType")
+    public Map<CardTypeEnum, CardProperties> getDetailsForCardType(@RequestParam(name = "type", required = false) String type) {
+       return cardTypeService.getDetailsForCardType(type);
     }
 }

@@ -1,31 +1,31 @@
 package com.project.ccs.models;
 
 public class CardProperties {
-    private int interestRate;
-    private int oneTimeLimit;
-    private int monthlyLimit;
+    private float interestRate;
+    private float oneTimeLimit;
+    private float monthlyLimit;
 
-    public int getInterestRate() {
+    public float getInterestRate() {
         return interestRate;
     }
 
-    public void setInterestRate(int interestRate) {
+    public void setInterestRate(float interestRate) {
         this.interestRate = interestRate;
     }
 
-    public int getOneTimeLimit() {
+    public float getOneTimeLimit() {
         return oneTimeLimit;
     }
 
-    public void setOneTimeLimit(int oneTimeLimit) {
+    public void setOneTimeLimit(float oneTimeLimit) {
         this.oneTimeLimit = oneTimeLimit;
     }
 
-    public int getMonthlyLimit() {
+    public float getMonthlyLimit() {
         return monthlyLimit;
     }
 
-    public void setMonthlyLimit(int monthlyLimit) {
+    public void setMonthlyLimit(float monthlyLimit) {
         this.monthlyLimit = monthlyLimit;
     }
 }

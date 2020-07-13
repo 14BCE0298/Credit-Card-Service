@@ -1,0 +1,16 @@
+credit-card-type:
+  silver:
+    interest-rate: 10
+    one-time-limit: 10000
+    monthly-limit: 100000
+  gold:
+    interest-rate: 9
+    one-time-limit: 20000
+    monthly-limit: 200000
+  platinum:
+    interest-rate: 8
+    one-time-limit: 30000
+    monthly-limit: 300000
+
+service:
+  name: Credit Card Service

@@ -10,4 +10,5 @@ public enum CardTypeEnum {
     CardTypeEnum(String type) {
         this.type = type;
     }
+    
 }
