@@ -4,10 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-//TODO: Create 1 API using query param to return details of all or asked credit card type
-//TODO: Adding Swagger
-//TODO : Reading data from yml config file
-//TODO : Add API to list type of credit cards
+//TODO : Add API to get customer details from CustID
 //TODO : Add API to apply for credit card
 //TODO : Add API to make purchase
 //TODO : Add API to return current amount due

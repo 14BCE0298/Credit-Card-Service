@@ -15,12 +15,14 @@ This service would act as an REST backend service to mimic the basic functionali
 
 **APIs**:
 1. GET /ccs/v1/card-type/details: Gets details of all or queried type of credit-card 
-2. POST /ccs/v1/customer/new : Creates a new Customer entity and stores it in a Mongo collection, and the created mongo DB _id is returned back. 
+2. POST /ccs/v1/customer/new : Creates a new Customer entity and stores it in a Mongo collection, and the created mongo DB _id is returned back.
+3. GET /ccs/v1/customer/customer-details : Get Customer details from DB based on provided custId, which is generated when saving user data to MongoDb 
 
 **Features**:
 1. YAML file is being used to provide details of all types of card
 2. Swagger is integrated to get details and use all created REST endpoints
 3. Running Mongo DB inside a docker container
+4. Using custom exceptions and mapping them using @ControllerAdvice and ResponseEntityExceptionHandler at application level
 
 **Running Locally**:
 1. Clone the project
