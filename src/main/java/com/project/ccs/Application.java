@@ -16,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 //TODO : Add API to get all transactions
 //TODO : Send purchase API data to a kafka broker
 //TODO: About API using service details class
+//TODO: Add constraints on user input
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.project.ccs")

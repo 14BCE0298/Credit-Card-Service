@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/ccs/v1/")
+@RequestMapping("/ccs/v1/card-type")
 public class CardTypeController {
     public CardTypeService cardTypeService;
 
@@ -18,7 +18,7 @@ public class CardTypeController {
         this.cardTypeService = cardTypeService;
     }
 
-    @GetMapping("cardType")
+    @GetMapping("/details")
     public Map<CardTypeEnum, CardProperties> getDetailsForCardType(@RequestParam(name = "type", required = false) String type) {
        return cardTypeService.getDetailsForCardType(type);
     }
