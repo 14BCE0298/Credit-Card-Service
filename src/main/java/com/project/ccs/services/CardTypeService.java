@@ -1,5 +1,6 @@
 package com.project.ccs.services;
 
+import com.project.ccs.customExceptions.exceptions.IncorrectCardTypeException;
 import com.project.ccs.models.AllCardTypeDetails;
 import com.project.ccs.models.CardProperties;
 import com.project.ccs.models.CardTypeEnum;
@@ -19,14 +20,18 @@ public class CardTypeService {
         this.allCardTypeDetails = allCardTypeDetails;
     }
 
-    public Map<CardTypeEnum, CardProperties> getDetailsForCardType(String cardType) {
+    public Map<String, CardProperties> getDetailsForCardType(String cardType) {
         if(cardType == null) {
             return allCardTypeDetails.mappingCardTypeDetails();
         } else {
-            HashMap<CardTypeEnum, CardProperties> cardDetails = new HashMap<>();
-            cardDetails.put(CardTypeEnum.valueOf(cardType.toUpperCase()),
-                    allCardTypeDetails.mappingCardTypeDetails().get(CardTypeEnum.valueOf(cardType.toUpperCase())));
-            return cardDetails;
+            HashMap<String, CardProperties> cardDetails = new HashMap<>();
+            CardProperties cardProperties = allCardTypeDetails.mappingCardTypeDetails().get(cardType);
+            if(cardProperties != null) {
+                cardDetails.put(cardType, cardProperties);
+                return cardDetails;
+            } else {
+                throw new IncorrectCardTypeException(cardType);
+            }
         }
     }
 }

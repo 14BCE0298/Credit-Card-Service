@@ -19,7 +19,7 @@ public class CardTypeController {
     }
 
     @GetMapping("/details")
-    public Map<CardTypeEnum, CardProperties> getDetailsForCardType(@RequestParam(name = "type", required = false) String type) {
+    public Map<String, CardProperties> getDetailsForCardType(@RequestParam(name = "type", required = false) String type) {
        return cardTypeService.getDetailsForCardType(type);
     }
 }

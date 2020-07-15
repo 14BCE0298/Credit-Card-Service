@@ -105,8 +105,8 @@ public class AllCardTypeDetails {
         this.goldMonthlyLimit = goldMonthlyLimit;
     }
 
-    public Map<CardTypeEnum, CardProperties> mappingCardTypeDetails() {
-        HashMap<CardTypeEnum, CardProperties> cardDetailsMap =
+    public Map<String, CardProperties> mappingCardTypeDetails() {
+        HashMap<String, CardProperties> cardDetailsMap =
                 new HashMap<>();
         CardProperties platinumCardProperties = new CardProperties();
         platinumCardProperties.setInterestRate(platinumInterestRate);
@@ -123,9 +123,9 @@ public class AllCardTypeDetails {
         silverCardProperties.setOneTimeLimit(silverOneTimeLimit);
         silverCardProperties.setMonthlyLimit(silverMonthlyLimit);
 
-        cardDetailsMap.put(CardTypeEnum.PLATINUM, platinumCardProperties);
-        cardDetailsMap.put(CardTypeEnum.GOLD, goldCardProperties);
-        cardDetailsMap.put(CardTypeEnum.SILVER, silverCardProperties);
+        cardDetailsMap.put(CardTypeEnum.PLATINUM.type, platinumCardProperties);
+        cardDetailsMap.put(CardTypeEnum.GOLD.type, goldCardProperties);
+        cardDetailsMap.put(CardTypeEnum.SILVER.type, silverCardProperties);
 
         return cardDetailsMap;
     }
