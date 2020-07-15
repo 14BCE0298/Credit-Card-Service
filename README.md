@@ -6,18 +6,24 @@ This service would act as an REST backend service to mimic the basic functionali
 
 **Technologies Used**:
 1. Java 8
-2. Spring-Boot 2.1.12.RELEASE
-3. Swagger 2.9.2
-4. YAML config files
+2. Maven
+3. Spring-Boot 2.1.12.RELEASE
+4. Swagger 2.9.2
+5. YAML config files
+6. Docker
+7. MongoRepository
 
 **APIs**:
-1. /ccs/v1/cardType : Gets details of all or queried type of credit-card 
+1. GET /ccs/v1/card-type/details: Gets details of all or queried type of credit-card 
+2. POST /ccs/v1/customer/new : Creates a new Customer entity and stores it in a Mongo collection, and the created mongo DB _id is returned back. 
 
 **Features**:
 1. YAML file is being used to provide details of all types of card
 2. Swagger is integrated to get details and use all created REST endpoints
+3. Running Mongo DB inside a docker container
 
 **Running Locally**:
 1. Clone the project
-2. Run Application.java 
-3. Hit swagger endpoint http://localhost:8080/swagger-ui.html#/ to ensure service is running
+2. Run docker container to get Mongo DB up: docker run -d -p 27017-27019:27017-27019 --name mongodb mongo
+3. Run Application.java 
+4. Hit swagger endpoint http://localhost:8080/swagger-ui.html#/ to ensure service is running
