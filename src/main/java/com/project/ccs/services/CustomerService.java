@@ -1,7 +1,8 @@
 package com.project.ccs.services;
 
 import com.project.ccs.customExceptions.exceptions.UserNotFoundException;
-import com.project.ccs.models.Customer;
+import com.project.ccs.models.CustomerDto;
+import com.project.ccs.models.documents.Customer;
 import com.project.ccs.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,8 +18,9 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public String addNewUser(Customer customer) {
-        return customerRepository.save(customer).getCustomerId();
+    public String addNewUser(CustomerDto customerDto) {
+        Customer customerCreated = new Customer(customerDto);
+        return customerRepository.save(customerCreated).getCustomerId();
     }
 
     public Customer getUserFromCustId(String custId) {

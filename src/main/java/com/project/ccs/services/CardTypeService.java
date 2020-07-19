@@ -3,7 +3,6 @@ package com.project.ccs.services;
 import com.project.ccs.customExceptions.exceptions.IncorrectCardTypeException;
 import com.project.ccs.models.AllCardTypeDetails;
 import com.project.ccs.models.CardProperties;
-import com.project.ccs.models.CardTypeEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

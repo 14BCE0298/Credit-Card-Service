@@ -1,5 +1,6 @@
-package com.project.ccs.models;
+package com.project.ccs.models.documents;
 
+import com.project.ccs.models.CustomerDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,6 +13,19 @@ public class Customer {
     private String phone;
     private int age;
     private String userId;
+    private int annualIncome;
+    private String flagged;
+    private static final String NOT_FLAGGED = "N";
+
+    public Customer(CustomerDto customerDto) {
+        this.name = customerDto.getName();
+        this.email = customerDto.getEmail();
+        this.phone = customerDto.getPhone();
+        this.age = customerDto.getAge();
+        this.annualIncome = customerDto.getAnnualIncome();
+        this.userId = createUserId();
+        this.flagged = NOT_FLAGGED;
+    }
 
     public String getCustomerId() {
         return customerId;
@@ -61,7 +75,23 @@ public class Customer {
         this.userId = userId;
     }
 
-    public String createUserId() {
+    public String getFlagged() {
+        return flagged;
+    }
+
+    public void setFlagged(String flagged) {
+        this.flagged = flagged;
+    }
+
+    public int getAnnualIncome() {
+        return annualIncome;
+    }
+
+    public void setAnnualIncome(int annualIncome) {
+        this.annualIncome = annualIncome;
+    }
+
+    private String createUserId() {
         int indexTillEmailAddressStarts;
         for(indexTillEmailAddressStarts = 0; indexTillEmailAddressStarts < this.email.length(); indexTillEmailAddressStarts++) {
             if(this.email.charAt(indexTillEmailAddressStarts) == '@') {

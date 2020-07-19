@@ -1,5 +1,7 @@
 package com.project.ccs.models;
 
+import com.project.ccs.models.documents.Customer;
+
 public class CreditCard {
     private Customer cardOwner;
     private int expiryMonth;

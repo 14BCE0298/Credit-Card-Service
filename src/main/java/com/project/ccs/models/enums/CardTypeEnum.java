@@ -1,4 +1,4 @@
-package com.project.ccs.models;
+package com.project.ccs.models.enums;
 
 public enum CardTypeEnum {
     SILVER("silver"),

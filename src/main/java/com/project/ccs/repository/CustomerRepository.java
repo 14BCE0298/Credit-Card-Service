@@ -1,7 +1,7 @@
 package com.project.ccs.repository;
 
 
-import com.project.ccs.models.Customer;
+import com.project.ccs.models.documents.Customer;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
