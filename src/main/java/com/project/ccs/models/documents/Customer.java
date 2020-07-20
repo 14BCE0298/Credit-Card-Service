@@ -17,6 +17,10 @@ public class Customer {
     private String flagged;
     private static final String NOT_FLAGGED = "N";
 
+    public Customer() {
+        // sample id : 5f1545b5139d2d2d42f4e467
+    }
+
     public Customer(CustomerDto customerDto) {
         this.name = customerDto.getName();
         this.email = customerDto.getEmail();
