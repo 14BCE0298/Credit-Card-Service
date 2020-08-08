@@ -1,0 +1,2 @@
+This is a file created to test camel route for moving file from directory : /home/vishal/Documents/projects/Credit-Card-Service/src/main/resources/DemoTransferFile.txt
+to new path : /home/vishal/Documents/projects/DemoTransferFile.txt

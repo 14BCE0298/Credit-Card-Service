@@ -1,7 +1,10 @@
 package com.project.ccs;
 
+import com.project.ccs.routes.FileTransferRoute;
+import org.apache.camel.CamelContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 //TODO : Read file using camel for setting users to flagged
@@ -14,7 +17,11 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.project.ccs")
 public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    public static void main(String[] args) throws Exception{
+        ApplicationContext context = SpringApplication.run(Application.class, args);
+        CamelContext camelContext = (CamelContext)context.getBean("camelContext");
+        camelContext.addRoutes(new FileTransferRoute());
+        Thread.sleep(60 * 100);
+        camelContext.stop();
     }
 }
