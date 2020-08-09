@@ -13,6 +13,7 @@ This service would act as an REST backend service to mimic the basic functionali
 6. Docker
 7. MongoRepository
 8. Spring boot starter validation
+9. camel-spring-boot-starter
 
 **APIs**:
 1. GET /ccs/v1/card-type/details: Gets details of all or queried type of credit-card 
