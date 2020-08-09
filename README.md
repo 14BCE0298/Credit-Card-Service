@@ -13,6 +13,7 @@ This service would act as an REST backend service to mimic the basic functionali
 6. Docker
 7. MongoRepository
 8. Spring boot starter validation
+9. Apache Camel
 
 **APIs**:
 1. GET /ccs/v1/card-type/details: Gets details of all or queried type of credit-card 
@@ -25,6 +26,7 @@ This service would act as an REST backend service to mimic the basic functionali
 3. Running Mongo DB inside a docker container
 4. Using custom exceptions and mapping them using @ControllerAdvice and ResponseEntityExceptionHandler at application level
 5. The customer details provided by Users are constraint bound to ensure data quality
+6. Added a camel route to copy file in a directory.
 
 **Running Locally**:
 1. Clone the project
